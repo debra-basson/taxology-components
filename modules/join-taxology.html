@@ -1,0 +1,112 @@
+<!-- TAXology • Join Section (with blue top gradient accent) -->
+<section id="tx-join" aria-labelledby="join-title"
+  style="--blue:#1f3c66;--green:#449551;--ink:#1f2937;--muted:#4b5563;--line:#e5e7eb;
+         --radius:16px;--shadow:0 8px 24px rgba(0,0,0,.06);
+         font-family:Manrope,system-ui,sans-serif;background:linear-gradient(180deg,#f3f7fb 0%,#ffffff 120%);
+         color:var(--ink);padding:36px 20px 28px;">
+  <style>
+    #tx-join .wrap{max-width:1080px;margin:0 auto;position:relative}
+    #tx-join .eyebrow{display:inline-block;font-weight:800;font-size:12px;letter-spacing:.35px;
+      padding:6px 10px;border-radius:999px;background:#eaf2ff;color:var(--blue);
+      border:1px solid #dbe7f7}
+    #tx-join h1{font-size:clamp(26px,4vw,34px);line-height:1.2;margin:10px 0 8px;
+      font-weight:800;color:var(--ink)}
+    #tx-join .support{font-size:clamp(15px,2.6vw,18px);line-height:1.5;
+      font-weight:600;color:var(--muted);margin:0 0 14px}
+
+    /* Two-column layout */
+    #tx-join .panel{display:grid;gap:18px;align-items:start;background:#fff;
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+      padding:18px}
+    @media(min-width:900px){#tx-join .panel{grid-template-columns:1fr .9fr}}
+    @media(min-width:680px) and (max-width:899px){#tx-join .panel{grid-template-columns:1fr 1fr}}
+    @media(max-width:679px){#tx-join .panel{grid-template-columns:1fr}}
+
+    /* Buttons */
+    #tx-join .cta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:4px}
+    #tx-join .btn{display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 16px;border-radius:10px;font-weight:800;text-decoration:none;
+      border:2px solid var(--blue);background:var(--blue);color:#fff;font-size:14px}
+    #tx-join .btn:hover{filter:brightness(.95)}
+    #tx-join .btn.green{background:var(--green);border-color:var(--green)}
+    @media(max-width:679px){#tx-join .btn{width:100%}}
+
+    /* Explain cards */
+    #tx-join .cta-explain{display:grid;gap:12px;margin-top:10px}
+    @media(min-width:680px){#tx-join .cta-explain{grid-template-columns:1fr 1fr}}
+    #tx-join .card{border:1px solid var(--line);border-radius:12px;background:#fff;
+      padding:12px 14px}
+    #tx-join .card h4{margin:0 0 6px;font-size:15px;font-weight:800;color:var(--blue)}
+    #tx-join .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+    #tx-join .mini{display:inline-block;margin-top:8px;font-size:13px;font-weight:800;
+      text-decoration:none;color:var(--green)}
+    #tx-join .mini:hover{text-decoration:underline}
+
+    /* How it works */
+    #tx-join .hiw h3{margin:0 0 8px;font-size:18px;font-weight:800;color:var(--blue)}
+    #tx-join ul{list-style:none;margin:0;padding:0}
+    #tx-join li{display:flex;gap:8px;align-items:flex-start;padding:6px 0}
+    #tx-join .dot{display:inline-flex;align-items:center;justify-content:center;
+      width:14px;height:14px;background:var(--green);color:#fff;font-weight:800;
+      font-size:10px;border-radius:3px;margin-top:4px;flex-shrink:0}
+    #tx-join .dot::before{content:"✓";line-height:1}
+
+    /* Spacing tweaks for tablets */
+    @media(max-width:1023px){
+      #tx-join{padding:28px 16px}
+      #tx-join .card{padding:12px}
+    }
+  </style>
+
+  <div class="wrap">
+    <span class="eyebrow">Join TAXology</span>
+    <h1 id="join-title">Create your account — simple, secure, and built for the way you work.</h1>
+
+    <div class="panel">
+      <!-- LEFT -->
+      <div>
+        <p class="support" style="margin-top:0">
+          For <strong>personal tax</strong>, create an <strong>Individual Account</strong>.  
+          For <strong>company compliance</strong>, create a <strong>Business Account</strong>.  
+          Your dashboard then guides the next steps.
+        </p>
+
+        <div class="cta-row">
+          <!-- INDIVIDUAL: FluentAuth registration (wp-login) -->
+          <a class="btn"
+             href="/wp-login.php?action=register&amp;redirect_to=/welcome/?setdash=individual">
+             Create Individual Account
+          </a>
+          <a class="btn green"
+             href="/my-account/?action=register&amp;redirect_to=/welcome/?setdash=business">
+             Create Business Account
+          </a>
+        </div>
+
+        <div class="cta-explain">
+          <div class="card">
+            <h4>Individual Account</h4>
+            <p>Built for personal tax. Upload documents, track progress, and complete your return with confidence.</p>
+            <a class="mini" href="/register/?redirect_to=/welcome/&set_journey=individual">Create Individual Account →</a>
+          </div>
+          <div class="card">
+            <h4>Business Account</h4>
+            <p>For company compliance and bookkeeping. Manage filings, invoices, and subscriptions in one place.</p>
+            <a class="mini" href="/register/?redirect_to=/welcome/&set_journey=business">Create Business Account →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="card hiw">
+        <h3>How it works</h3>
+        <ul>
+          <li><span class="dot"></span><div>Choose the account that fits — Individual or Business.</div></li>
+          <li><span class="dot"></span><div>Sign up with your email and password to create your secure account.</div></li>
+          <li><span class="dot"></span><div>Our system automatically connects you to the right dashboard.</div></li>
+          <li><span class="dot"></span><div>Your dashboard keeps everything organised with guided steps.</div></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
