@@ -18,6 +18,13 @@ Each module is stored as its own .html file for easy reuse and reference.
 
 ## Purpose
 
+This repository documents the core TAXology UI components, frontend modules, and guided journey sections used across the website. 
+
+Although the modules usually follow a top-down website order (Homepage → Selector → Journey Pages → Conversion Pages), the *Join TAXology* module is documented first because it operates as a stand-alone, high-conversion destination. Visitors must act, without external forces like countdown timers or urgency CTA's. 
+
+The *Join TAXology Page* is the final step in the flow — the point where visitors must choose either *Individual* or *Business* and commit to creating their account. Because it is the last stop before registration and has a direct impact on conversions, it is documented before the homepage modules. This ordering reflects its strategic importance, not the website hierarchy.
+
+The remaining modules (Homepage Hero, Dual Path Selector, Journey Sections, etc.) will follow next, working backwards from the final conversion point into the broader site structure.
 The *Join TAXology* module is a standalone, high-conversion page designed as the final step in the TAXology user funnel. 
 Its purpose is to remove decision-fatigue and channel users into one of two clear account paths:
 
