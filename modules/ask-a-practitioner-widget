@@ -1,0 +1,161 @@
+<!-- TAXology • Quick Self-Check v3 (final: Ask = Blue, WhatsApp = Green, Show steps = Pale) -->
+<section id="tx-quiz-v3" style="font-family:'Manrope','Segoe UI',sans-serif;background:#fff;padding:28px 16px;">
+  <style>
+    #tx-quiz-v3 .wrap{max-width:1140px;margin:0 auto}
+    #tx-quiz-v3 .hdr{margin-bottom:14px}
+    #tx-quiz-v3 .title{margin:0;color:#1f3c66;font-size:26px;font-weight:900;letter-spacing:-.2px}
+    #tx-quiz-v3 .sub{margin:6px 0 0;color:#374151;font-size:15.5px;line-height:1.6}
+
+    /* Grid */
+    #tx-quiz-v3 .grid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:start}
+    @media(max-width:900px){#tx-quiz-v3 .grid{grid-template-columns:1fr}}
+
+    /* Cards */
+    #tx-quiz-v3 .card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 2px 10px rgba(15,23,42,.06)}
+    #tx-quiz-v3 .q-list{padding:10px}
+    #tx-quiz-v3 .results{padding:14px}
+
+    /* Question rows with inline buttons */
+    #tx-quiz-v3 .q{
+      display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;
+      padding:12px;border:1px solid #e5e7eb;border-radius:12px;background:#f9fafb;margin:10px 0
+    }
+    #tx-quiz-v3 .q p{margin:0;color:#374151;font-size:15.5px;line-height:1.55}
+    #tx-quiz-v3 .btn-mini{
+      padding:8px 12px;
+      border-radius:10px;
+      background:linear-gradient(135deg,#f9fafb,#e5e7eb);
+      color:#1f2937;
+      font:800 13px/1.2 Manrope;
+      border:2px solid #d1d5db;
+      cursor:pointer;
+      transition:.18s;
+    }
+    #tx-quiz-v3 .btn-mini:hover{
+      background:linear-gradient(135deg,#e5e7eb,#d1d5db);
+      border-color:#9ca3af;
+      color:#111827;
+    }
+    @media(max-width:520px){#tx-quiz-v3 .q{grid-template-columns:1fr}}
+
+    /* Result card */
+    #tx-quiz-v3 .res-card{
+      position:relative;overflow:hidden;
+      background:#f3f7fb;border:1px solid #e1eaf5;border-radius:12px;padding:14px;color:#1f3e8a
+    }
+    #tx-quiz-v3 .res-card h4{margin:0 0 6px;font-size:16px;font-weight:900;color:#274b8c}
+    #tx-quiz-v3 .res-card p{margin:0 0 10px;color:#374151}
+    #tx-quiz-v3 .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Big CTAs (right card) */
+    #tx-quiz-v3 .btn{
+      padding:12px 18px;border-radius:10px;font:600 14px/1.2 Manrope;text-decoration:none;transition:.18s;display:inline-flex;align-items:center;justify-content:center
+    }
+    /* 🔵 Ask a Practitioner */
+    #tx-quiz-v3 .btn-primary{
+      background:#1f3c66;color:#fff;border:2px solid #1f3c66;
+    }
+    #tx-quiz-v3 .btn-primary:hover{background:#2f5fa0;border-color:#2f5fa0}
+    /* 🟢 WhatsApp */
+    #tx-quiz-v3 .btn-whatsapp{
+      background:#25D366;color:#fff;border:2px solid #25D366;
+    }
+    #tx-quiz-v3 .btn-whatsapp:hover{background:#1ebe5d;border-color:#1ebe5d}
+
+    #tx-quiz-v3 .trust{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    #tx-quiz-v3 .tchip{font:800 11.5px Manrope;color:#0f2747;background:#f3f7fb;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px}
+
+    /* Watermark “?” when default */
+    #tx-quiz-v3 .res-card.watermark::before{
+      content:"?"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      font-size:200px; font-weight:900; color:rgba(55,65,81,0.06); pointer-events:none; user-select:none
+    }
+
+    /* Mobile buttons full width */
+    @media(max-width:640px){ #tx-quiz-v3 .btn{width:100%} }
+  </style>
+
+  <div class="wrap">
+    <div class="hdr">
+      <h3 class="title">Worried about your tax? Pick your situation</h3>
+      <p class="sub">Tap “Show steps” next to your situation. We’ll reveal the safest next action with a direct link to our team.</p>
+    </div>
+
+    <div class="grid">
+      <!-- Left: questions -->
+      <div class="card">
+        <div class="q-list">
+          <div class="q"><p>I’m unsure whether my SARS assessment is correct.</p><button class="btn-mini" data-topic="assessment">Show steps</button></div>
+          <div class="q"><p>I’ve received a SARS letter/verification.</p><button class="btn-mini" data-topic="verification">Show steps</button></div>
+          <div class="q"><p>I’ve missed a deadline and fear penalties.</p><button class="btn-mini" data-topic="penalties">Show steps</button></div>
+          <div class="q"><p>VAT, payroll or company compliance feels risky.</p><button class="btn-mini" data-topic="compliance">Show steps</button></div>
+        </div>
+      </div>
+
+      <!-- Right: results -->
+      <div class="card">
+        <div class="results" id="txq3-out">
+          <div class="res-card watermark">
+            <h4>Not sure where to start?</h4>
+            <p>Tell us what’s happening and we’ll reply within 1 business day.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="/ask-a-practitioner/?topic=ask-practitioner&amp;source=quiz">Ask a Practitioner</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/27761116138?text=Hi%20TAXology%20team,%20I%20need%20help%20with:%20General%20question" target="_blank" rel="noopener">WhatsApp (fast track)</a>
+            </div>
+            <div class="trust">
+              <span class="tchip">Registered: SAIT • SARS • CIPC</span>
+              <span class="tchip">POPIA-aligned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /grid -->
+  </div>
+
+  <script>
+    (function(){
+      var section = document.getElementById('tx-quiz-v3');
+      if(!section) return;
+
+      var out = section.querySelector('#txq3-out');
+      if(!out) return;
+
+      var copy = {
+        assessment:{h:"You're not alone.", t:"We double-check assessments and verify that you have claimed everything you are entitled to.", topic:"assessment"},
+        verification:{h:"Verification letters need exact evidence.", t:"We compile and submit your supporting documents so that your tax return is completed without comebacks.", topic:"verification"},
+        penalties:{h:"Missed a deadline? Let’s stop the clock.", t:"We regularise and manage exposure fast so you can move forward. We will also help you set up a system so that you have future peace of mind.", topic:"penalties"},
+        compliance:{h:"If it feels risky, let’s stabilise it.", t:"We steady VAT, PAYE and CIPC filings and keep you on track.If there are any penalties we will apply for a remission.", topic:"compliance"},
+        default:{h:"Not sure where to start?", t:"Tell us what’s happening and we’ll reply within 1 business day.", topic:"ask-practitioner"}
+      };
+
+      function build(topicKey){
+        var c = copy[topicKey] || copy.default;
+        var ask = "/ask-a-practitioner/?topic=" + encodeURIComponent(c.topic) + "&source=quiz";
+        var wa  = "https://wa.me/27839767273?text=" + encodeURIComponent("Hi TAXology team, I need help with: " + c.topic);
+        var wmClass = (topicKey==='default') ? " watermark" : "";
+        return '' +
+          '<div class="res-card'+ wmClass +'">' +
+            '<h4>'+ c.h +'</h4>' +
+            '<p>'+ c.t +'</p>' +
+            '<div class="cta-row">' +
+              '<a class="btn btn-primary" href="'+ ask +'">Ask a Practitioner</a>' +
+              '<a class="btn btn-whatsapp" href="'+ wa +'" target="_blank" rel="noopener">WhatsApp (fast track)</a>' +
+            '</div>' +
+            '<div class="trust">' +
+              '<span class="tchip">Registered: SAIT • SARS • CIPC</span>' +
+              '<span class="tchip">POPIA-aligned</span>' +
+            '</div>' +
+          '</div>';
+      }
+
+      function render(topicKey){ out.innerHTML = build(topicKey); }
+
+      section.addEventListener('click', function(e){
+        var btn = e.target.closest('.btn-mini');
+        if(!btn || !section.contains(btn)) return;
+        var topic = (btn.getAttribute('data-topic') || 'default').toLowerCase();
+        render(topic);
+      });
+    })();
+  </script>
+</section>
