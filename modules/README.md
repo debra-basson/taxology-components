@@ -60,10 +60,29 @@ It contrasts SARS’s automated systems with TAXology’s guided, human-supporte
 ### Files in this module
 - home-hero.html — full HTML + CSS block for the section
 
-This folder serves as a portfolio reference for:
-- Front-end component design
-- Elementor integration
-- HTML/CSS layout work
-- UX structure for guided tax and compliance journeys
+### 2. Tax Practitioner Triage Panel (“Ask a Practitioner”)
+
+Most people don’t arrive on TAXology knowing exactly what they need. This module is designed to meet them where they are by naming the four most common “panic” scenarios:
+
+- *I’m not sure if my tax is right*
+- *I’ve received a communication from SARS*
+- *I’m late / I’ve missed a deadline*
+- *My bookkeeper/accountant has done something I don’t trust*
+
+Each option opens a reassuring explanation that:
+
+1. Normalises the problem (“this happens, here’s why”),  
+2. Clarifies what’s actually at risk, and  
+3. Offers a next step that feels manageable.
+
+From this panel, users can:
+- Submit a short *“Ask a Practitioner”* form, or  
+- Fast-track into *WhatsApp* for immediate help.
+
+Functionally, this module:
+- Reduces anxiety,
+- Pre-qualifies the problem type, and
+- Routes the user into the right support channel without forcing them to understand SARS terminology first.
+
 
 More modules will be added over time as the TAXology site evolves.
