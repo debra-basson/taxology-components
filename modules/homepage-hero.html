@@ -1,0 +1,148 @@
+<!-- TAXology • Home Hero (Unified colors + square ringed image like Contact) -->
+<section class="txh-fold txo-scope" aria-labelledby="txh-title" style="position:relative;">
+  <style>
+    /* ===== Same tokens as Contact ===== */
+    .txo-scope{
+      --blue:#1f3c66; --blue-2:#162a45; --green:#449551;
+      --ink:#0f172a; --muted:#4b5563; --bg:#fff;
+      --header-h:72px;
+      /* Ringed image vars (same feel as Contact) */
+      --imgSize: clamp(360px, 45vw, 520px);
+      --corner: 18px;
+      --ring:#eaf1fb;     /* outer halo */
+      --ringW: 2px;       /* ring thickness */
+      --inner:#ffffff;    /* inner buffer */
+      --innerPad: 8px;    /* inner spacing */
+      font-family:Manrope,system-ui,-apple-system,sans-serif!important;
+      background:var(--bg);
+    }
+
+    .txh-fold{
+      padding-block: clamp(40px,5vh,72px);
+      min-height: calc(100vh - var(--header-h));
+      display:block;
+    }
+
+    .txh-wrap{
+      max-width:1140px; margin:0 auto; padding-inline:20px;
+      display:grid; gap:48px; align-items:center;
+      grid-template-columns:1.05fr .95fr;
+      grid-template-areas:"copy media";
+      height:100%;
+    }
+    .txh-copy{
+      grid-area:copy; min-width:0;
+      display:flex; flex-direction:column; justify-content:center; align-items:flex-start;
+    }
+
+    /* MEDIA: square + subtle ring (like Contact) */
+    .txh-media{ grid-area:media; margin:0; display:flex; align-items:center; justify-content:flex-start; }
+    .txh-media .ring{
+      width:var(--imgSize); height:var(--imgSize);
+      background:var(--ring); padding:var(--ringW);
+      border-radius: calc(var(--corner) + var(--innerPad) + var(--ringW));
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 10px 28px rgba(15,23,42,.08);
+    }
+    .txh-media .ring__inner{
+      width:100%; height:100%;
+      background:var(--inner); padding:var(--innerPad);
+      border-radius: calc(var(--corner) + var(--innerPad));
+      display:flex; align-items:center; justify-content:center;
+    }
+    .txh-pic{
+      width:100%; height:100%;
+      object-fit:contain; object-position:center;
+      border-radius:var(--corner); display:block;
+    }
+    /* Neutralize any theme wrappers around image */
+    .txh-media, .txh-media *:not(.ring):not(.ring__inner):not(img){
+      background:transparent !important; box-shadow:none !important; border:0 !important; border-radius:0 !important; padding:0 !important;
+    }
+
+    /* Eyebrow pill (kept from your design) */
+    .txh-eyebrow{
+      align-self:flex-start !important;
+      display:inline-flex; width:fit-content; max-width:100%;
+      margin:0 0 10px; padding:6px 12px; border-radius:999px;
+      background:#f3f7fb; color:#113461; border:1px solid #d1d9e6;
+      font:800 12.5px/1 Manrope; box-shadow:0 1px 0 rgba(17,52,97,.05);
+    }
+
+    /* Headline + lead (unified sizing) */
+    .txh-title{
+      margin:0 0 10px; font:900 clamp(28px,4vw,36px)/1.12 Manrope; color:var(--ink); letter-spacing:-.3px;
+    }
+    .txh-title .word-blue{ color:var(--blue) }
+    .txh-title .word-green{ color:var(--green) }
+    .txh-lead{
+      margin:0 0 24px; color:var(--muted);
+      font:600 clamp(15.5px,1.6vw,16.5px)/1.45 Manrope; max-width:720px;
+    }
+
+    /* CTAs (match Contact buttons) */
+    .txh-ctas{ display:flex; gap:12px; flex-wrap:wrap; margin-top:10px }
+    .txh-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 20px; border-radius:10px; text-decoration:none; transition:.2s ease;
+      font-family:Manrope; font-weight:800; font-size:16px; border:2px solid var(--blue); cursor:pointer;
+      box-shadow:0 5px 12px rgba(31,60,102,.18);
+    }
+    .txh-btn.primary{
+      background:linear-gradient(180deg,var(--blue) 0%, var(--blue-2) 100%); color:#fff !important;
+      min-width:180px;
+    }
+    .txh-btn.primary:hover{
+      background:linear-gradient(180deg,var(--blue-2) 0%, var(--blue) 100%);
+    }
+    .txh-btn.ghost{
+      background:#fff; color:var(--blue); border:1.5px solid var(--blue); box-shadow:none;
+      font-weight:700; font-size:15px; padding:10px 18px;
+    }
+    .txh-btn.ghost:hover{ background:#f3f7fb; color:#2f5fa0; border-color:#2f5fa0 }
+
+    /* Responsive swaps (media first on mobile, centered) */
+    @media(max-width:980px){
+      .txh-wrap{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "media"
+          "copy";
+        gap:26px;
+      }
+      .txh-media{ justify-content:center; }
+    }
+    @media(max-width:640px){
+      .txh-ctas{ flex-direction:column }
+      .txh-btn{ width:100% }
+      /* Slightly thinner ring on very small screens */
+      .txo-scope{ --innerPad:6px; --ringW:1.5px; }
+    }
+  </style>
+
+  <div class="txh-wrap">
+    <!-- Copy -->
+    <div class="txh-copy">
+      <span class="txh-eyebrow">Built for South African Compliance</span>
+      <h1 id="txh-title" class="txh-title">
+        <span class="word-blue">From Confusion</span> to <span class="word-green">Confidence</span>.
+      </h1>
+      <p class="txh-lead">
+        TAXology turns overwhelming compliance into a guided process you can trust — accurate filings, clear next steps, and a human practitioner when you need one.
+      </p>
+      <div class="txh-ctas">
+        <a class="txh-btn primary" href="/individual-tax-return/">I’m an Individual</a>
+        <a class="txh-btn ghost" href="/business-services/">I have a Small Business</a>
+      </div>
+    </div>
+
+    <!-- Media (square + ring; keeps your image URL) -->
+    <figure class="txh-media" role="img" aria-label="TAXology — modern compliance workflows for individuals and SMEs">
+      <div class="ring">
+        <div class="ring__inner">
+          <img class="txh-pic" src="https://taxology.co.za/wp-content/uploads/2025/10/TXO-Image4.png" alt="Two South African professionals smiling" loading="eager" fetchpriority="high">
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
