@@ -25,7 +25,7 @@ Although the modules usually follow a top-down website order (Homepage → Selec
 The *Join TAXology Page* is the final step in the flow — the point where visitors must choose either *Individual* or *Business* and commit to creating their account. Because it is the last stop before registration and has a direct impact on conversions, it is documented before the homepage modules. This ordering reflects its strategic importance, not the website hierarchy.
 
 The remaining modules (Homepage Hero, Dual Path Selector, Journey Sections, etc.) will follow next, working backwards from the final conversion point into the broader site structure.
-The *Join TAXology* module is a standalone, high-conversion page designed as the final step in the TAXology user funnel. 
+The Join TAXology module is a standalone, high-conversion page designed as the final step in the TAXology user funnel. 
 Its purpose is to remove decision-fatigue and channel users into one of two clear account paths:
 
 - *Create Individual Account*
@@ -37,6 +37,28 @@ and acts as the *final decision point* before account creation.
 
 If users bounce here, the issue is almost always a conversion, trust, or clarity problem — 
 which is why this module is treated as its own component, not part of the homepage.
+
+## Homepage Hero (Dual Guided Path)
+
+The Homepage Hero is the first visual anchor on the TAXology website and introduces the guided dual-path model:
+
+- *I’m an Individual* → routed to the Individual Tax page  
+- *I have a Small Business* → routed to the Business Services page  
+
+The hero is designed around the psychology of reducing overwhelm.  
+It contrasts SARS’s automated systems with TAXology’s guided, human-supported experience.
+
+### Why this hero was designed this way
+
+- Places the user into the correct journey from the first fold  
+- Sets up TAXology’s brand promise: *From Confusion to Confidence*  
+- Uses colour tokens, Manrope typography, and our unified layout  
+- Shows a visual anchor (square image with soft ring) to humanise the UI  
+- Includes two strong CTAs for immediate routing  
+- Supports the edge tab and scroll guidance system used across the site
+
+### Files in this module
+- home-hero.html — full HTML + CSS block for the section
 
 This folder serves as a portfolio reference for:
 - Front-end component design
